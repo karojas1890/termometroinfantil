@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+
 // Configuración de EJS como motor de plantillas
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -42,7 +43,7 @@ app.get('/rueda-calma', (req, res) => {
 });
 
 // Iniciar el servidor
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Usa el puerto de Render o 3000 como respaldo
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
