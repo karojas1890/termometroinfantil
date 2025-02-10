@@ -1,0 +1,117 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #FF6F61;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.rueda {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #333;
+  margin: 0 auto;
+}
+
+.opcion {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  transform: rotate(calc((var(--i) - 1) * 40deg));
+  background-color: var(--clr);
+  padding: 10px; /* Añadido para dar espacio al texto */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+}
+
+.opcion span {
+  display: block;
+  transform: rotate(calc(-1 * (var(--i) - 1) * 40deg)); /* Contrarresta la rotación del segmento */
+}
+
+#girar-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#girar-btn:hover {
+  background-color: #45a049;
+}
+
+#resultado {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Estilos para los botones adicionales */
+.botones-adicionales {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
+
+.btn-inicio {
+  background-color: #4caf50; /* Verde */
+}
+
+.btn-inicio:hover {
+  background-color: #45a049;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.btn:hover {
+  animation: bounce 0.5s;
+}

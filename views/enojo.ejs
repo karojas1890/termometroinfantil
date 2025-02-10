@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enojo</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Enojo</h1>
+    <form action="/enojo" method="POST">
+      <label>
+        <input type="checkbox" name="opcion1" value="Levante la voz"> Levanté la voz
+      </label><br>
+      <label>
+        <input type="checkbox" name="opcion2" value="Tuve comportamientos agresivos"> Tuve comportamientos agresivos
+      </label><br>
+      <label>
+        <input type="checkbox" name="opcion3" value="Tuve un vocabulario hostil"> Tuve un vocabulario hostil
+      </label><br>
+      <label>
+        <input type="checkbox" name="opcion4" value="Lancé algún objeto"> Lancé algún objeto
+      </label><br>
+      <label>
+        <input type="checkbox" name="opcion5" value="Di portazos"> Di portazos
+      </label><br>
+      <label>
+        <input type="checkbox" name="opcion6" value="Me negué a comer"> Me negué a comer
+      </label><br>
+      <label>
+        <input type="checkbox" name="opcion7" value="No pude dormir"> No pude dormir
+      </label><br>
+      <button type="submit" class="btn btn-enviar">Medir mi enojo</button>
+    </form>
+
+    <% if (mensaje) { %>
+      <h2 class="mensaje"><%= mensaje %></h2>
+    <% } %>
+
+    <!-- Botones adicionales -->
+    <div class="botones-adicionales">
+      <a href="/" class="btn btn-inicio">Volver al Inicio</a>
+      <a href="/rueda-calma" class="btn btn-rueda">Girar la Rueda de la Calma</a>
+    </div>
+  </div>
+</body>
+</html>
